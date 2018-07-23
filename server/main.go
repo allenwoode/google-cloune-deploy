@@ -1,16 +1,17 @@
 package main
 
 import (
+	"io"
 	"net/http"
-	"fmt"
+	"log"
 )
 
 func firstPage(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "<h1>Hello, this is index page</h1>")
+	io.WriteString(w, "<h1>Hello, this is a new index page</h1>")
 }
 
 func main() {
 	http.HandleFunc("/", firstPage)
 	http.ListenAndServe(":8000", nil)
-	fmt.Println("server listening on 8000...")
+	log.Println("server listening on 8000...")
 }
