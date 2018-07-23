@@ -7,7 +7,7 @@ import (
 )
 
 func firstPage(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "<h1>server v3.0 index page!</h1>")
+	io.WriteString(w, "<h1>server v4.0 index page!</h1>")
 	log.Println("request index page")
 }
 
